@@ -5,22 +5,40 @@ using UnityEngine;
 [ExecuteInEditMode]
 [SelectionBase]
 public class CubeEditor : MonoBehaviour {
-    [Range(1f, 20f)] [SerializeField] float gridsize = 10f;
+    Waypoint waypoint;
 
-    TextMesh textmesh;
-    // Update is called once per frame
-    void Update () {
-        Vector3 snapPos;
-        
-        snapPos.x = Mathf.RoundToInt(transform.position.x / gridsize) * gridsize;
-        snapPos.z = Mathf.RoundToInt(transform.position.z / gridsize) * gridsize;
-        transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
+    private void Awake()
+    {
+        waypoint = GetComponent<Waypoint>();
+    }
 
-        string posText = snapPos.x / gridsize + "," + snapPos.z / gridsize;
+    void Update()
+    {
+        SnapToGrid();
+        UpdateLabel();
+    }
 
-        textmesh = GetComponentInChildren<TextMesh>();
-        textmesh.text = posText;
+    private void SnapToGrid()
+    {
+        int gridSize = waypoint.getGridSize();
+        transform.position = new Vector3(
+            waypoint.getGridPos().x,
+            0f,
+            waypoint.getGridPos().y
+        );
+    }
 
-        gameObject.name = posText;
-	}
+    private void UpdateLabel()
+    {
+       TextMesh textMesh = GetComponentInChildren<TextMesh>();
+       int gridSize = waypoint.getGridSize();
+
+        string labelText =
+                waypoint.getGridPos().x / gridSize +
+                "," +
+               waypoint.getGridPos().y / gridSize;
+
+        textMesh.text = labelText;
+        gameObject.name = labelText;
+     }
 }

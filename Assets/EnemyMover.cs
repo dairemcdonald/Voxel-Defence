@@ -4,35 +4,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMover : MonoBehaviour {
-    private Block[] blocks;
-    [SerializeField] List<Block> path;
+    private Waypoint[] blocks;
+    [SerializeField] List<Waypoint> path;
 	// Use this for initialization
 	void Start () {
         // Create the array blocks
-        Block[] blocks = FindObjectsOfType<Block>();
+        Waypoint[] blocks = FindObjectsOfType<Waypoint>();
 
         // Create new List with initial capacity
-        path = new List<Block>(blocks.Length);
+        path = new List<Waypoint>(blocks.Length);
 
         // Add all blocks to the list
-        foreach (Block block in blocks)
+        foreach (Waypoint block in blocks)
         {
             path.Add(block);
         }
 
-        PrintWaypoints();
+        StartCoroutine(followPath());
     }
 
-    private void PrintWaypoints()
+
+   IEnumerator followPath()
     {
-        foreach (Block waypoint in path)
+        foreach (Waypoint waypoint in path)
         {
-            print(waypoint.name);
+            transform.position = waypoint.transform.position;
+            yield return new WaitForSeconds(1f); 
         }
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }
