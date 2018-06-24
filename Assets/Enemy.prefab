@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4058004474335424}
   - component: {fileID: 114456293866654452}
   - component: {fileID: 114850194413170784}
+  - component: {fileID: 114639870670271918}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -39,7 +40,7 @@ GameObject:
   - component: {fileID: 33562112252866230}
   - component: {fileID: 23371603902105374}
   m_Layer: 0
-  m_Name: Enemy_A
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,14 +52,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1248610637026074}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4947416278058456}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4947416278058456
 Transform:
   m_ObjectHideFlags: 1
@@ -125,6 +126,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9597e4431b0597842bbf070362316cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114639870670271918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1248610637026074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc450684fe0c2c42b190e25a04fc93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridSize: 10
 --- !u!114 &114850194413170784
 MonoBehaviour:
   m_ObjectHideFlags: 1
