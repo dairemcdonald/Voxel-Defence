@@ -22,7 +22,7 @@ public class Pathfinder : MonoBehaviour {
     public List<Waypoint> GetPath()
     {
         LoadBlocks();
-        ColorStartAndEnd();
+       // ColorStartAndEnd();
         BreadthFirstSearch();
         CreatePath();
         return path;
@@ -92,12 +92,13 @@ public class Pathfinder : MonoBehaviour {
         }
     }
 
-    private void ColorStartAndEnd()
+    /*private void ColorStartAndEnd()
     {
         // todo consdier moving out
         startWaypoint.SetTopColor(Color.green);
         endWaypoint.SetTopColor(Color.red);
     }
+    */
 
     private void LoadBlocks()
     {
