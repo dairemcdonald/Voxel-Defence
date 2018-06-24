@@ -21,14 +21,19 @@ public class Pathfinder : MonoBehaviour {
 
     public List<Waypoint> GetPath()
     {
-        if (path.Count == 0)
+        if (path.Count == 0) //if path hasn't been calculated
         {
-            LoadBlocks();
-            // ColorStartAndEnd();
-            BreadthFirstSearch();
-            CreatePath();
+            CalculatePath();
         }
         return path;
+    }
+
+    private void CalculatePath()
+    {
+        LoadBlocks();
+        // ColorStartAndEnd();
+        BreadthFirstSearch();
+        CreatePath();
     }
 
     private void CreatePath()
