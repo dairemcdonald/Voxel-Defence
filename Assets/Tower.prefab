@@ -99,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217773669188964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: -30}
+  m_LocalPosition: {x: 10, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4617756252093480}
@@ -241,8 +241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0897db68c89be42a2e9ee7a45a6d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackRange: 20
   objectToPan: {fileID: 4846078707690544}
   targetEnemy: {fileID: 0}
+  projectileParticle: {fileID: 0}
 --- !u!198 &198824967440250432
 ParticleSystem:
   m_ObjectHideFlags: 1
