@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour {
+    [SerializeField] int hp = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -11,6 +13,22 @@ public class EnemyDamage : MonoBehaviour {
 
     void OnParticleCollision(GameObject other)
     {
-        print("I'm hit");
+        ProcessHit();
+        if (hp <= 1)
+        {
+            KillEnemy();
+        }
+    }
+
+
+    void ProcessHit()
+    {
+        hp--;
+        print("current hp: " + hp);
+    }
+
+    private void KillEnemy()
+    {
+        Destroy(gameObject);
     }
 }
