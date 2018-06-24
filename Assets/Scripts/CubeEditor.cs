@@ -22,9 +22,9 @@ public class CubeEditor : MonoBehaviour {
     {
         int gridSize = waypoint.getGridSize();
         transform.position = new Vector3(
-            waypoint.getGridPos().x,
+            waypoint.getGridPos().x * gridSize,
             0f,
-            waypoint.getGridPos().y
+            waypoint.getGridPos().y * gridSize
         );
     }
 
@@ -34,9 +34,9 @@ public class CubeEditor : MonoBehaviour {
        int gridSize = waypoint.getGridSize();
 
         string labelText =
-                waypoint.getGridPos().x / gridSize +
+                waypoint.getGridPos().x  +
                 "," +
-               waypoint.getGridPos().y / gridSize;
+               waypoint.getGridPos().y ;
 
         textMesh.text = labelText;
         gameObject.name = labelText;

@@ -3,33 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMover : MonoBehaviour {
-    private Waypoint[] blocks;
-    [SerializeField] List<Waypoint> path;
-	// Use this for initialization
-	void Start () {
-        // Create the array blocks
-        Waypoint[] blocks = FindObjectsOfType<Waypoint>();
+public class EnemyMover : MonoBehaviour
+{
 
-        // Create new List with initial capacity
-        path = new List<Waypoint>(blocks.Length);
-
-        // Add all blocks to the list
-        foreach (Waypoint block in blocks)
-        {
-            path.Add(block);
-        }
-
-        StartCoroutine(followPath());
+    // Use this for initialization
+    void Start()
+    {
+        Pathfinder pathfinder = FindObjectOfType<Pathfinder>();
+        var path = pathfinder.GetPath();
+        StartCoroutine(FollowPath(path));
     }
 
-
-   IEnumerator followPath()
+    IEnumerator FollowPath(List<Waypoint> path)
     {
+        print("Starting patrol...");
         foreach (Waypoint waypoint in path)
         {
             transform.position = waypoint.transform.position;
-            yield return new WaitForSeconds(1f); 
+            yield return new WaitForSeconds(1f);
         }
+
     }
 }
