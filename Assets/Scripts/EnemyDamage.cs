@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour {
     [SerializeField] int hp = 10;
+    [SerializeField] ParticleSystem deathParticle;
+    [SerializeField] ParticleSystem hitParticle;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 
@@ -23,11 +25,14 @@ public class EnemyDamage : MonoBehaviour {
 
     void ProcessHit()
     {
+        hitParticle.Play();
         hp--;
     }
 
     private void KillEnemy()
     {
+        var vfx = Instantiate(deathParticle, transform.position, Quaternion.identity);
+        vfx.Play();
         Destroy(gameObject);
     }
 }
