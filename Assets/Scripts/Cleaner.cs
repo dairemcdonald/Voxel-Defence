@@ -12,7 +12,7 @@ public class Cleaner : MonoBehaviour {
 
     IEnumerator Clean()
     {
-            gameObject.transform.parent = GameObject.Find("Rubbish").transform;
+            gameObject.transform.parent = GameObject.Find("Clutter").transform;
             yield return new WaitForSeconds(delay);
             Destroy(gameObject);
     }
