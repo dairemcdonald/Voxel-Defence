@@ -40,7 +40,9 @@ public class Waypoint : MonoBehaviour {
         {
             if (isPlaceable)
             {
-                Instantiate(towerPrefab, transform.position, Quaternion.identity);
+                var towerTemp = Instantiate(towerPrefab, transform.position, Quaternion.identity);
+                towerTemp.transform.parent = GameObject.Find("Towers").transform;
+                this.isPlaceable = false;
             }
 
             else
