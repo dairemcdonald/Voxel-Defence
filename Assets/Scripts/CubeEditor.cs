@@ -41,4 +41,6 @@ public class CubeEditor : MonoBehaviour {
         textMesh.text = labelText;
         gameObject.name = labelText;
      }
+
+
 }
