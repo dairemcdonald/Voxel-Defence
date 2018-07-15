@@ -12,6 +12,8 @@ public class Pathfinder : MonoBehaviour {
     Waypoint searchCenter;
     List<Waypoint> path = new List<Waypoint>();
 
+    Renderer[] blockMeshs;
+
     Vector2Int[] directions = {
         Vector2Int.up,
         Vector2Int.right,
@@ -39,6 +41,7 @@ public class Pathfinder : MonoBehaviour {
     private void CreatePath()
     {
         path.Add(endWaypoint);
+        ChangeBlockMesh(endWaypoint);
         endWaypoint.isPlaceable = false;
 
         Waypoint previous = endWaypoint.exploredFrom;
@@ -46,11 +49,29 @@ public class Pathfinder : MonoBehaviour {
         {
             path.Add(previous);
             previous.isPlaceable = false;
+            ChangeBlockMesh(previous);
             previous = previous.exploredFrom;
         }
 
         path.Add(startWaypoint);
+        ChangeBlockMesh(startWaypoint);
         path.Reverse();
+    }
+
+    private static void ChangeBlockMesh(Waypoint waypoint)
+    {
+        Renderer[] renderers = waypoint.GetComponentsInChildren<Renderer>();
+        foreach (Renderer r in renderers)
+        {
+            if (r.name == "Block_Friendly")
+            {
+                r.enabled = false;
+            }
+            if (r.name == "Block_Enemy")
+            {
+                r.enabled = true;
+            }
+        }
     }
 
     private void BreadthFirstSearch()

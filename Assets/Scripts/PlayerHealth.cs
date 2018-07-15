@@ -10,12 +10,12 @@ public class PlayerHealth : MonoBehaviour {
 
     private void Start()
     {
-        healthText.text = playerHP.ToString();
+        healthText.text = "Health: " +  playerHP.ToString();
     }
     private void OnTriggerEnter(Collider other)
     {
         playerHP--;
-        healthText.text = playerHP.ToString();
+        healthText.text = "Health: " + playerHP.ToString();
 
         if (playerHP == 0)
         {

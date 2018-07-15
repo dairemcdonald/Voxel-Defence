@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour {
     void Start()
     {
         StartCoroutine(Spawn());
-        waveText.text = enemyNum.ToString();
+        waveText.text = "Enemies Left: " +  enemyNum.ToString();
     }
 
     IEnumerator Spawn()
@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour {
         {
             var tempInt = Instantiate(prefab, transform.position, Quaternion.identity);
             tempInt.transform.parent = this.transform;
-            waveText.text = ((enemyNum - i)-1).ToString(); //subtracts already spawned enemies from total expected 
+            waveText.text = "Enemies Left: " + ((enemyNum - i)-1).ToString(); //subtracts already spawned enemies from total expected 
             yield return new WaitForSeconds(spawnDelay);
         }
     }
