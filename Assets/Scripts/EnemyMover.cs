@@ -24,10 +24,10 @@ public class EnemyMover : MonoBehaviour
             yield return new WaitForSeconds(movementDelay);
         }
 
-        KillEnemy();
+        selfDestruct();
     }
 
-    private void KillEnemy()
+    private void selfDestruct()
     {
         var vfx = Instantiate(baseDeathParticle, transform.position, Quaternion.identity);
         vfx.transform.parent = GameObject.Find("Clutter").transform;

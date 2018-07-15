@@ -403,6 +403,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9597e4431b0597842bbf070362316cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementDelay: 0.2
+  baseDeathParticle: {fileID: 198537984209914932, guid: ef4ba9a115533a84199e0f403b6f025b,
+    type: 2}
 --- !u!114 &114310432987045212
 MonoBehaviour:
   m_ObjectHideFlags: 1

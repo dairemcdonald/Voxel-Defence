@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 198215428582040142}
   - component: {fileID: 199113155619613730}
   m_Layer: 0
-  m_Name: Blue Spray
+  m_Name: Orange Spray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 198579650134916736}
   - component: {fileID: 199901880920316678}
   m_Layer: 0
-  m_Name: White Spray
+  m_Name: Yellow Spray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 198614261362037272}
   - component: {fileID: 199143583539381130}
   m_Layer: 0
-  m_Name: Blue Chunks
+  m_Name: Orange Chunks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13903,8 +13903,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 20
-      minScalar: 10
+      scalar: 40
+      minScalar: 20
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -22849,8 +22849,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ab00f17eb91843641b249cf458dcf596, type: 2}
-  - {fileID: 2100000, guid: ab00f17eb91843641b249cf458dcf596, type: 2}
+  - {fileID: 2100000, guid: f2a8693768fc5c74c9053d4dc8650cd7, type: 2}
+  - {fileID: 2100000, guid: f2a8693768fc5c74c9053d4dc8650cd7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22905,8 +22905,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ab00f17eb91843641b249cf458dcf596, type: 2}
-  - {fileID: 2100000, guid: ab00f17eb91843641b249cf458dcf596, type: 2}
+  - {fileID: 2100000, guid: f2a8693768fc5c74c9053d4dc8650cd7, type: 2}
+  - {fileID: 2100000, guid: f2a8693768fc5c74c9053d4dc8650cd7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23017,8 +23017,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f2a8693768fc5c74c9053d4dc8650cd7, type: 2}
-  - {fileID: 2100000, guid: f2a8693768fc5c74c9053d4dc8650cd7, type: 2}
+  - {fileID: 2100000, guid: ab00f17eb91843641b249cf458dcf596, type: 2}
+  - {fileID: 2100000, guid: ab00f17eb91843641b249cf458dcf596, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23073,8 +23073,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f2a8693768fc5c74c9053d4dc8650cd7, type: 2}
-  - {fileID: 2100000, guid: f2a8693768fc5c74c9053d4dc8650cd7, type: 2}
+  - {fileID: 2100000, guid: ab00f17eb91843641b249cf458dcf596, type: 2}
+  - {fileID: 2100000, guid: ab00f17eb91843641b249cf458dcf596, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
