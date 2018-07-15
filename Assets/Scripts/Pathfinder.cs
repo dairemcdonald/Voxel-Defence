@@ -104,7 +104,7 @@ public class Pathfinder : MonoBehaviour {
 
     /*private void ColorStartAndEnd()
     {
-        // todo consdier moving out
+        // TODO consider moving out
         startWaypoint.SetTopColor(Color.green);
         endWaypoint.SetTopColor(Color.red);
     }

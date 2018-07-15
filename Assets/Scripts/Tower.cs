@@ -7,9 +7,12 @@ public class Tower : MonoBehaviour {
     [SerializeField] float attackRange;
     [SerializeField] Transform objectToPan;
     [SerializeField] ParticleSystem projectileParticle;
+    [SerializeField] Waypoint waypoint;
 
     Transform targetEnemy;
-   
+
+
+
 
     // Update is called once per frame
     void Update () {
@@ -68,5 +71,14 @@ public class Tower : MonoBehaviour {
     {
         var emissionModule = projectileParticle.emission;
         emissionModule.enabled = isActive;
+    }
+
+    public void setBase(Waypoint newbase)
+    {
+        waypoint = newbase;
+    }
+    public Waypoint getBase()
+    {
+        return waypoint;
     }
 }
