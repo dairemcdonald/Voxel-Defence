@@ -41,10 +41,15 @@ public class TowerFactory : MonoBehaviour {
         Destroy(towerToRemove.gameObject);
     }
 
-    public void MoveTower(Waypoint baseWaypoint)
+    public void MoveTower(Waypoint newBaseWaypoint)
     {
-        DisistantiateTower();
-        InstantiateTower(baseWaypoint);
-       
+        var towerToMove = towers.Dequeue();
+        towerToMove.getBase().isPlaceable = true;
+
+        towerToMove.setBase(newBaseWaypoint);
+
+        towerToMove.transform.position = newBaseWaypoint.transform.position;
+
+        towers.Enqueue(towerToMove);
     }
 }

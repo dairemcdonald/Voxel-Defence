@@ -32,7 +32,9 @@ public class EnemyDamage : MonoBehaviour {
     private void KillEnemy()
     {
         var vfx = Instantiate(deathParticle, transform.position, Quaternion.identity);
+        vfx.transform.parent = GameObject.Find("Clutter").transform;
         vfx.Play();
+        Destroy(vfx.gameObject, vfx.main.duration);
         Destroy(gameObject);
     }
 }
